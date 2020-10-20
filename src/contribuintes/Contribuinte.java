@@ -14,7 +14,7 @@ public class Contribuinte {
 		this.taxaContribuicao = taxaContribuicao;
 		this.salario = salario;
 	}
-	private String nome;
+	
 	public String getCpf() {
 		return cpf;
 	}
@@ -58,22 +58,27 @@ public class Contribuinte {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	
+	private String nome;
 	private String cpf;
 	private LocalDate dataAdmissao;
 	private boolean status;
 	private double taxaContribuicao;
 	private double salario;
 	
-	//public getNome() {
-	//	return nome;
-	//}
+	
 	
 	public double calcularContribuicao () {
 		return salario * taxaContribuicao;
 	}
 	
 	public String imprimirContribuicaoMensal () {
-		String resultado = "A contribuição mensal de" + this.nome + " é de R$" + this.calcularContribuicao();
+		String resultado = "A contribuição mensal de " + this.nome + " é de R$" + this.calcularContribuicao();
 		return resultado;
 	}
 }
